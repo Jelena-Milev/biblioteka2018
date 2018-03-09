@@ -10,11 +10,17 @@ public class Biblioteka implements BibliotekaInterfejs{
 
 	@Override
 	public void dodajKnjigu(Knjiga k) {
+		if(k==null || knjige.contains(k)) {
+			throw new RuntimeException("Knjiga je null ili vec postoji");
+		}
 		knjige.add(k);		
 	}
 
 	@Override
 	public void obrisiKnjigu(Knjiga k) {
+		if(k==null || !knjige.contains(k)) {
+			throw new RuntimeException("Knjiga je null ili ne postoji");
+		}
 		knjige.remove(k);
 	}
 
@@ -26,9 +32,16 @@ public class Biblioteka implements BibliotekaInterfejs{
 	@Override
 	public LinkedList<Knjiga> pronadjiKnjiga(Autor a, String isbn, String naslov, String izdavac) {
 		if(naslov==null) {
+<<<<<<< HEAD
 			return null;
 		}		
 		LinkedList<Knjiga> novaLista=new LinkedList<Knjiga>();		
+=======
+			throw new RuntimeException("Morate uneti naslov");
+		}		
+		
+		LinkedList<Knjiga> novaLista=new LinkedList<Knjiga>();
+>>>>>>> refs/heads/Logicka_kontrola
 		for(int i=0;i<knjige.size();i++) {
 			if(knjige.get(i).getNaslov().contains(naslov)) {
 				novaLista.add(knjige.get(i));

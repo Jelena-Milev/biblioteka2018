@@ -31,17 +31,13 @@ public class Biblioteka implements BibliotekaInterfejs{
 
 	@Override
 	public LinkedList<Knjiga> pronadjiKnjiga(Autor a, String isbn, String naslov, String izdavac) {
+		//Okej komentar
 		if(naslov==null) {
-<<<<<<< HEAD
-			return null;
-		}		
-		LinkedList<Knjiga> novaLista=new LinkedList<Knjiga>();		
-=======
 			throw new RuntimeException("Morate uneti naslov");
 		}		
 		
 		LinkedList<Knjiga> novaLista=new LinkedList<Knjiga>();
->>>>>>> refs/heads/Logicka_kontrola
+
 		for(int i=0;i<knjige.size();i++) {
 			if(knjige.get(i).getNaslov().contains(naslov)) {
 				novaLista.add(knjige.get(i));
